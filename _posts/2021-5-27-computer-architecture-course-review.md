@@ -62,7 +62,7 @@ when I started the course, I already had a superficial knowledge of most of its 
 
 ![warp-scheduling]({{ site.baseurl }}/images/warp-scheduling.png)
 
-As a graphics developer, one of my aims was to learn GPU architecture. And yes, it was covered in the lectures, but not so deeply as I would like. Certainly that was because the course aims to cover a wide range of topics and cannot go into every detail in each one, but it is needed to say that if you, like me,  want to study GPU architecture in depth, this course may be a good start, but will definitely be not enough. I also found sad that one of the most today's challenging topics, branch prediction, was explained quite fast, leaving modern standard prediction algorithms for self learning. Of course there is masters computer architecture course which focuses more deeply on exact concepts, but I wish that as much as possible might be learned from bachelors one.
+As a graphics developer, one of my aims was to learn GPU architecture. And yes, it was covered in the lectures, but not so deeply as I would like. Certainly that was because the course aims to cover a wide range of topics and cannot go into every detail in each one, but it is needed to say that if you, like me,  want to study GPU architecture in depth, this course may be a good start, but will definitely be not enough. I also found sad that one of the most today's challenging topics, branch prediction, was explained quite fast, leaving modern standard prediction algorithms for self learning. Of course there is masters computer architecture course which focuses more deeply on exact concepts, but I wish that as much of them as possible might be learned from bachelors one.
 
 ## What's next
 
