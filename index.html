@@ -6,7 +6,7 @@ layout: default
   {% for post in site.posts %}
     {% unless post.path contains 'old-posts-2021' %}
       <article class="post">
-        <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
         <div class="entry">
           {{ post.excerpt }}
         </div>
@@ -19,8 +19,8 @@ layout: default
     <h2 class="section-title">Old Posts from 2021</h2>
     {% for post in site.posts %}
       {% if post.path contains 'old-posts-2021' %}
-        <article class="post old-post">
-          <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+        <article class="post">
+          <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
           <div class="entry">
             {{ post.excerpt }}
           </div>
