@@ -2,31 +2,190 @@
 layout: default
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    {% unless post.path contains 'old-posts-2021' %}
-      <article class="post">
-        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-        <div class="entry">
-          {{ post.excerpt }}
+<!-- Hero -->
+<section class="hero" id="about">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hi, I'm</p>
+        <h1 class="hero-name">Aleksandr Potapov</h1>
+        <h2 class="hero-title">Software Engineer</h2>
+        <p class="hero-summary">
+          5+ years of experience building <strong>AI-first user-facing products</strong> and
+          <strong>high-performance rendering systems</strong>. Currently developing a next-generation
+          spreadsheet/BI web application with AI-generated, auto-refreshable dashboards used by
+          thousands of daily users.
+        </p>
+        <div class="hero-actions">
+          <a href="mailto:alexander.potapov.w@gmail.com" class="btn btn-primary">Get in Touch</a>
+          <a href="https://github.com/MomoDeve" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
         </div>
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-      </article>
-    {% endunless %}
-  {% endfor %}
-
-  <div class="old-posts-section">
-    <h2 class="section-title">Old Posts from 2021</h2>
-    {% for post in site.posts %}
-      {% if post.path contains 'old-posts-2021' %}
-        <article class="post">
-          <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-          <div class="entry">
-            {{ post.excerpt }}
-          </div>
-          <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-        </article>
-      {% endif %}
-    {% endfor %}
+      </div>
+      <div class="hero-avatar">
+        <img src="{{ site.avatar }}" alt="Aleksandr Potapov" />
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- Skills -->
+<section class="section skills-section">
+  <div class="container">
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">&#9000;</div>
+        <h3>Frontend</h3>
+        <p>TypeScript, SolidJS, React</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">&#9881;</div>
+        <h3>AI</h3>
+        <p>LLM systems, prompt engineering, LLM evaluation</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">&#9670;</div>
+        <h3>3D Graphics</h3>
+        <p>C++, Vulkan API, WebGPU, GLSL, SPIR-V toolchain</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">&#8942;</div>
+        <h3>Other</h3>
+        <p>Python, Parsing, DSLs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="section" id="experience">
+  <div class="container">
+    <h2 class="section-heading">Professional Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>AI / Frontend Software Developer</h3>
+              <p class="company">The Bricks, Inc</p>
+            </div>
+            <span class="timeline-date">May 2022 &ndash; Present</span>
+          </div>
+          <ul class="timeline-details">
+            <li>Built core product features for an AI-first spreadsheet/BI web application: spreadsheet rendering engine, charts, tables, and other interactive visualization tools used by <strong>100K+ total users</strong>.</li>
+            <li>Designed an algorithm for <strong>AI-generated auto-refreshable dashboards</strong>: users create dashboard widgets via AI data queries which run on their data in sandbox environment, with automatically tracked dependencies.</li>
+            <li>Analyzed user interaction data and collaborated with product to redesign key workflows, increasing subscription conversion rate from <strong>&lt;1% to 6%</strong> within a year.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>3D Graphics Software Developer</h3>
+              <p class="company">Eagle Dynamics</p>
+            </div>
+            <span class="timeline-date">Aug 2021 &ndash; May 2022</span>
+          </div>
+          <ul class="timeline-details">
+            <li>Implemented a <strong>Vulkan rendering backend</strong> to replace an older DirectX 11 one; improved performance by <strong>~15% on average</strong> and enabled adoption of modern rendering features.</li>
+            <li>Created an automated pipeline converting legacy <strong>FX/DirectX shaders to SPIR-V</strong>, saving dozens of hours during migration.</li>
+            <li>Optimized GPU memory allocation and usage; leveraged buffer sharing and texture memory aliasing to reduce <strong>VRAM usage by ~10%</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>C++ / Python Software Developer</h3>
+              <p class="company">Nanosemantics Lab</p>
+            </div>
+            <span class="timeline-date">Oct 2020 &ndash; Jun 2021</span>
+          </div>
+          <ul class="timeline-details">
+            <li>Migrated a handwritten C parser to <strong>Lark (Python)</strong>, reducing the parsing codebase by <strong>2x+</strong> and accelerating feature development.</li>
+            <li>Extended a custom chatbot DSL with <strong>conditionals, loops, and function calls</strong>, enabling more complex interaction logic; benefited <strong>60%+</strong> of company customers.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="section section-alt" id="projects">
+  <div class="container">
+    <h2 class="section-heading">Open Source Projects</h2>
+
+    <div class="projects-grid">
+      <a href="https://github.com/asc-community/MxEngine" target="_blank" rel="noopener" class="project-card">
+        <div class="project-stars">1.2K+ stars</div>
+        <h3>MxEngine</h3>
+        <p class="project-role">Author</p>
+        <p>3D game engine with deferred rendering, PBR, physics, and runtime code reload.</p>
+      </a>
+
+      <a href="https://github.com/prographon/graphics-developer-roadmap" target="_blank" rel="noopener" class="project-card">
+        <div class="project-stars">1.2K+ stars</div>
+        <h3>Graphics Developer Roadmap</h3>
+        <p class="project-role">Maintainer</p>
+        <p>Curated graphics programming resources and learning path.</p>
+      </a>
+
+      <a href="https://github.com/asc-community/AngouriMath" target="_blank" rel="noopener" class="project-card">
+        <div class="project-stars">800+ stars</div>
+        <h3>AngouriMath</h3>
+        <p class="project-role">Co-author</p>
+        <p>C# symbolic math library for evaluation, simplification, and analytic solving.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section class="section" id="education">
+  <div class="container">
+    <h2 class="section-heading">Education</h2>
+
+    <div class="education-card">
+      <div class="education-header">
+        <div>
+          <h3>National Research University, Higher School of Economics</h3>
+          <p class="education-location">HSE Moscow</p>
+        </div>
+        <span class="education-date">2020 &ndash; 2024</span>
+      </div>
+      <p class="education-detail">Bachelor's Degree &mdash; Software Engineering, Computer Science Faculty</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <h2 class="section-heading">Get in Touch</h2>
+    <div class="contact-content">
+      <p>I'm always open to discussing new opportunities, interesting projects, or collaborations.</p>
+      <div class="contact-links">
+        <a href="mailto:alexander.potapov.w@gmail.com" class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">alexander.potapov.w@gmail.com</span>
+        </a>
+        <a href="https://github.com/MomoDeve" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/MomoDeve</span>
+        </a>
+        <a href="https://linkedin.com/in/alexander-potapov" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/alexander-potapov</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
