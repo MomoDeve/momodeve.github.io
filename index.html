@@ -6,23 +6,41 @@ layout: default
 <section class="hero" id="about">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-text">
-        <p class="hero-greeting">Hi, I'm</p>
-        <h1 class="hero-name">Aleksandr Potapov</h1>
-        <h2 class="hero-title">Software Engineer</h2>
-        <p class="hero-summary">
-          5+ years of experience building <strong>AI-first user-facing products</strong> and
-          <strong>high-performance rendering systems</strong>. Currently developing a next-generation
-          spreadsheet/BI web application with AI-generated, auto-refreshable dashboards used by
-          thousands of daily users.
-        </p>
-        <div class="hero-actions">
-          <a href="mailto:alexander.potapov.w@gmail.com" class="btn btn-primary">Get in Touch</a>
-          <a href="https://github.com/MomoDeve" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-        </div>
-      </div>
       <div class="hero-avatar">
         <img src="{{ site.avatar }}" alt="Aleksandr Potapov" />
+      </div>
+      <div class="hero-text">
+        <h1 class="hero-name">
+          Hi, I am <span class="hero-highlight">Aleksandr Potapov</span> or just
+          <span class="hero-highlight">Alex</span>
+        </h1>
+        <p class="hero-summary">
+          I am a software engineer specializing in
+          <strong>AI-powered products</strong> and
+          <strong>3D graphics</strong>, both natively and on the web.
+          <br /><br />
+          I enjoy working across the full stack of complex,
+          performance-sensitive applications &mdash; from building
+          <strong>low-level rendering systems</strong> for game engines and
+          flight simulators to designing <strong>LLM-driven products</strong>
+          for thousands of users.
+        </p>
+
+        <div class="hero-actions">
+          <a href="mailto:alexander.potapov.w@gmail.com" class="btn btn-primary"
+            >Get in Touch</a
+          >
+          <a href="{{ site.baseurl }}/resume.pdf" target="_blank" class="btn btn-outline"
+            >Resume</a
+          >
+          <a
+            href="https://github.com/MomoDeve"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline"
+            >GitHub</a
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -31,35 +49,26 @@ layout: default
 <!-- Skills -->
 <section class="section skills-section">
   <div class="container">
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-icon">&#9000;</div>
-        <h3>Frontend</h3>
-        <p>TypeScript, SolidJS, React</p>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">&#9881;</div>
-        <h3>AI</h3>
-        <p>LLM systems, prompt engineering, LLM evaluation</p>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">&#9670;</div>
-        <h3>3D Graphics</h3>
-        <p>C++, Vulkan API, WebGPU, GLSL, SPIR-V toolchain</p>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">&#8942;</div>
-        <h3>Other</h3>
-        <p>Python, Parsing, DSLs</p>
-      </div>
-    </div>
+    <h2 class="section-heading">What I Work With</h2>
+    <ul class="skills-list">
+      <li>
+        <strong>Frontend:</strong> TypeScript, SolidJS, React, WebAssembly
+      </li>
+      <li>
+        <strong>AI:</strong> LLM workflows, prompt engineering, evaluation,
+        agent systems
+      </li>
+      <li>
+        <strong>3D Graphics:</strong> C++, Vulkan API, WebGPU, CUDA, shaders
+      </li>
+    </ul>
   </div>
 </section>
 
 <!-- Experience -->
 <section class="section" id="experience">
   <div class="container">
-    <h2 class="section-heading">Professional Experience</h2>
+    <h2 class="section-heading">Experience</h2>
 
     <div class="timeline">
       <div class="timeline-item">
@@ -68,15 +77,41 @@ layout: default
           <div class="timeline-header">
             <div>
               <h3>AI / Frontend Software Developer</h3>
-              <p class="company">The Bricks, Inc</p>
+              <p class="company">
+                <a
+                  href="https://www.thebricks.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >The Bricks, Inc</a
+                >
+                <span class="company-location">&middot; Toronto, Canada</span>
+              </p>
             </div>
             <span class="timeline-date">May 2022 &ndash; Present</span>
           </div>
-          <ul class="timeline-details">
-            <li>Built core product features for an AI-first spreadsheet/BI web application: spreadsheet rendering engine, charts, tables, and other interactive visualization tools used by <strong>100K+ total users</strong>.</li>
-            <li>Designed an algorithm for <strong>AI-generated auto-refreshable dashboards</strong>: users create dashboard widgets via AI data queries which run on their data in sandbox environment, with automatically tracked dependencies.</li>
-            <li>Analyzed user interaction data and collaborated with product to redesign key workflows, increasing subscription conversion rate from <strong>&lt;1% to 6%</strong> within a year.</li>
-          </ul>
+          <details class="timeline-collapse" open>
+            <summary>Show details</summary>
+            <ul class="timeline-details">
+              <li>
+                Built core product features for an AI-first spreadsheet/BI web
+                application: spreadsheet rendering engine, charts, tables, and
+                other interactive visualization tools used by
+                <strong>100K+ total users</strong>.
+              </li>
+              <li>
+                Designed an algorithm for
+                <strong>AI-generated auto-refreshable dashboards</strong>: users
+                create dashboard widgets via AI data queries which run on their
+                data in sandbox environment, with automatically tracked
+                dependencies.
+              </li>
+              <li>
+                Analyzed user interaction data and collaborated with product to
+                redesign key workflows, increasing subscription conversion rate
+                from <strong>&lt;1% to 6%</strong> within a year.
+              </li>
+            </ul>
+          </details>
         </div>
       </div>
 
@@ -86,15 +121,39 @@ layout: default
           <div class="timeline-header">
             <div>
               <h3>3D Graphics Software Developer</h3>
-              <p class="company">Eagle Dynamics</p>
+              <p class="company">
+                <a
+                  href="https://www.digitalcombatsimulator.com/en/"
+                  target="_blank"
+                  rel="noopener"
+                  >Eagle Dynamics</a
+                >
+                <span class="company-location">&middot; Moscow, Russia</span>
+              </p>
             </div>
             <span class="timeline-date">Aug 2021 &ndash; May 2022</span>
           </div>
-          <ul class="timeline-details">
-            <li>Implemented a <strong>Vulkan rendering backend</strong> to replace an older DirectX 11 one; improved performance by <strong>~15% on average</strong> and enabled adoption of modern rendering features.</li>
-            <li>Created an automated pipeline converting legacy <strong>FX/DirectX shaders to SPIR-V</strong>, saving dozens of hours during migration.</li>
-            <li>Optimized GPU memory allocation and usage; leveraged buffer sharing and texture memory aliasing to reduce <strong>VRAM usage by ~10%</strong>.</li>
-          </ul>
+          <details class="timeline-collapse" open>
+            <summary>Show details</summary>
+            <ul class="timeline-details">
+              <li>
+                Implemented a <strong>Vulkan rendering backend</strong> to replace
+                an older DirectX 11 one; improved performance by
+                <strong>~15% on average</strong> and enabled adoption of modern
+                rendering features.
+              </li>
+              <li>
+                Created an automated pipeline converting legacy
+                <strong>FX/DirectX shaders to SPIR-V</strong>, saving dozens of
+                hours during migration.
+              </li>
+              <li>
+                Optimized GPU memory allocation and usage; leveraged buffer
+                sharing and texture memory aliasing to reduce
+                <strong>VRAM usage by ~10%</strong>.
+              </li>
+            </ul>
+          </details>
         </div>
       </div>
 
@@ -104,14 +163,34 @@ layout: default
           <div class="timeline-header">
             <div>
               <h3>C++ / Python Software Developer</h3>
-              <p class="company">Nanosemantics Lab</p>
+              <p class="company">
+                <a
+                  href="https://nanosemantics.ai/en"
+                  target="_blank"
+                  rel="noopener"
+                  >Nanosemantics Lab</a
+                >
+                <span class="company-location">&middot; Moscow, Russia</span>
+              </p>
             </div>
             <span class="timeline-date">Oct 2020 &ndash; Jun 2021</span>
           </div>
-          <ul class="timeline-details">
-            <li>Migrated a handwritten C parser to <strong>Lark (Python)</strong>, reducing the parsing codebase by <strong>2x+</strong> and accelerating feature development.</li>
-            <li>Extended a custom chatbot DSL with <strong>conditionals, loops, and function calls</strong>, enabling more complex interaction logic; benefited <strong>60%+</strong> of company customers.</li>
-          </ul>
+          <details class="timeline-collapse" open>
+            <summary>Show details</summary>
+            <ul class="timeline-details">
+              <li>
+                Migrated a handwritten C parser to <strong>Lark (Python)</strong>,
+                reducing the parsing codebase by <strong>2x+</strong> and
+                accelerating feature development.
+              </li>
+              <li>
+                Extended a custom chatbot DSL with
+                <strong>conditionals, loops, and function calls</strong>, enabling
+                more complex interaction logic; benefited <strong>60%+</strong> of
+                company customers.
+              </li>
+            </ul>
+          </details>
         </div>
       </div>
     </div>
@@ -119,31 +198,55 @@ layout: default
 </section>
 
 <!-- Projects -->
-<section class="section section-alt" id="projects">
+<section class="section" id="projects">
   <div class="container">
-    <h2 class="section-heading">Open Source Projects</h2>
+    <h2 class="section-heading">Open Source</h2>
 
-    <div class="projects-grid">
-      <a href="https://github.com/asc-community/MxEngine" target="_blank" rel="noopener" class="project-card">
-        <div class="project-stars">1.2K+ stars</div>
-        <h3>MxEngine</h3>
-        <p class="project-role">Author</p>
-        <p>3D game engine with deferred rendering, PBR, physics, and runtime code reload.</p>
-      </a>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3><a href="https://github.com/asc-community/MxEngine" target="_blank" rel="noopener">MxEngine</a> <span class="project-role">&middot; Author</span></h3>
+            </div>
+            <span class="timeline-date">1.2K+ stars</span>
+          </div>
+          <ul class="timeline-details">
+            <li>3D game engine with deferred rendering, PBR, physics, and runtime code reload.</li>
+          </ul>
+        </div>
+      </div>
 
-      <a href="https://github.com/prographon/graphics-developer-roadmap" target="_blank" rel="noopener" class="project-card">
-        <div class="project-stars">1.2K+ stars</div>
-        <h3>Graphics Developer Roadmap</h3>
-        <p class="project-role">Maintainer</p>
-        <p>Curated graphics programming resources and learning path.</p>
-      </a>
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3><a href="https://github.com/prographon/graphics-developer-roadmap" target="_blank" rel="noopener">Graphics Developer Roadmap</a> <span class="project-role">&middot; Maintainer</span></h3>
+            </div>
+            <span class="timeline-date">1.2K+ stars</span>
+          </div>
+          <ul class="timeline-details">
+            <li>Curated graphics programming resources and learning path.</li>
+          </ul>
+        </div>
+      </div>
 
-      <a href="https://github.com/asc-community/AngouriMath" target="_blank" rel="noopener" class="project-card">
-        <div class="project-stars">800+ stars</div>
-        <h3>AngouriMath</h3>
-        <p class="project-role">Co-author</p>
-        <p>C# symbolic math library for evaluation, simplification, and analytic solving.</p>
-      </a>
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3><a href="https://github.com/asc-community/AngouriMath" target="_blank" rel="noopener">AngouriMath</a> <span class="project-role">&middot; Co-author</span></h3>
+            </div>
+            <span class="timeline-date">800+ stars</span>
+          </div>
+          <ul class="timeline-details">
+            <li>C# symbolic math library for evaluation, simplification, and analytic solving.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -157,34 +260,49 @@ layout: default
       <div class="education-header">
         <div>
           <h3>National Research University, Higher School of Economics</h3>
-          <p class="education-location">HSE Moscow</p>
+          <p class="education-location">Moscow, Russia</p>
         </div>
         <span class="education-date">2020 &ndash; 2024</span>
       </div>
-      <p class="education-detail">Bachelor's Degree &mdash; Software Engineering, Computer Science Faculty</p>
+      <p class="education-detail">
+        <strong>Bachelor's Degree</strong> &mdash; Software Engineering,
+        Computer Science Faculty
+      </p>
     </div>
   </div>
 </section>
 
 <!-- Contact -->
-<section class="section section-alt" id="contact">
+<section class="section" id="contact">
   <div class="container">
-    <h2 class="section-heading">Get in Touch</h2>
+    <h2 class="section-heading">Contact</h2>
     <div class="contact-content">
-      <p>I'm always open to discussing new opportunities, interesting projects, or collaborations.</p>
+      <p>
+        Open to discussing new opportunities, interesting projects, or
+        collaborations.
+      </p>
       <div class="contact-links">
-        <a href="mailto:alexander.potapov.w@gmail.com" class="contact-item">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">alexander.potapov.w@gmail.com</span>
-        </a>
-        <a href="https://github.com/MomoDeve" target="_blank" rel="noopener" class="contact-item">
-          <span class="contact-label">GitHub</span>
-          <span class="contact-value">github.com/MomoDeve</span>
-        </a>
-        <a href="https://linkedin.com/in/alexander-potapov" target="_blank" rel="noopener" class="contact-item">
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">linkedin.com/in/alexander-potapov</span>
-        </a>
+        <div class="contact-item">
+          <a href="mailto:alexander.potapov.w@gmail.com">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">alexander.potapov.w@gmail.com</span>
+          </a>
+          <button class="copy-btn" data-copy="alexander.potapov.w@gmail.com">Copy</button>
+        </div>
+        <div class="contact-item">
+          <a href="https://github.com/MomoDeve" target="_blank" rel="noopener">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com/MomoDeve</span>
+          </a>
+          <button class="copy-btn" data-copy="https://github.com/MomoDeve">Copy</button>
+        </div>
+        <div class="contact-item">
+          <a href="https://linkedin.com/in/alexander-potapov" target="_blank" rel="noopener">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">linkedin.com/in/alexander-potapov</span>
+          </a>
+          <button class="copy-btn" data-copy="https://linkedin.com/in/alexander-potapov">Copy</button>
+        </div>
       </div>
     </div>
   </div>

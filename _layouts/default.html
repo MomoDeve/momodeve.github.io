@@ -14,7 +14,6 @@
   <body>
     <nav class="nav">
       <div class="nav-inner">
-        <a href="#" class="nav-logo">AP</a>
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
@@ -41,5 +40,25 @@
         </div>
       </div>
     </footer>
+    <script>
+      if (window.innerWidth <= 640) {
+        document.querySelectorAll('.timeline-collapse').forEach(function(d) {
+          d.removeAttribute('open');
+        });
+      }
+      document.querySelectorAll('.copy-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          navigator.clipboard.writeText(btn.dataset.copy).then(function() {
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+              btn.textContent = 'Copy';
+              btn.classList.remove('copied');
+            }, 1500);
+          });
+        });
+      });
+    </script>
   </body>
 </html>
