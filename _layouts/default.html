@@ -143,9 +143,11 @@
         });
       })();
 
-      document.querySelectorAll('.copy-btn').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
+      document.querySelectorAll('.contact-item').forEach(function(item) {
+        var btn = item.querySelector('.copy-btn');
+        if (!btn) return;
+
+        function doCopy() {
           navigator.clipboard.writeText(btn.dataset.copy).then(function() {
             btn.textContent = 'Copied!';
             btn.classList.add('copied');
@@ -154,6 +156,16 @@
               btn.classList.remove('copied');
             }, 1500);
           });
+        }
+
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          doCopy();
+        });
+
+        item.addEventListener('click', function(e) {
+          if (e.target.closest('a') || e.target.closest('.copy-btn')) return;
+          doCopy();
         });
       });
     </script>

@@ -16,6 +16,12 @@
   box-sizing: border-box;
 }
 
+.hide-mobile {
+  @include mobile {
+    display: none;
+  }
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -38,7 +44,12 @@ body {
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $text-heading;
   font-weight: 600;
   line-height: 1.3;
@@ -229,11 +240,17 @@ img {
 
   @include mobile {
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 }
 
 .hero-actions .btn {
+  &.btn-hide-mobile {
+    @include mobile {
+      display: none;
+    }
+  }
+
   @include mobile {
     padding: 8px 14px;
     font-size: 12px;
@@ -310,7 +327,7 @@ img {
   letter-spacing: -0.3px;
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 32px;
     height: 2px;
@@ -367,7 +384,7 @@ img {
   padding-left: 24px;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 6px;
@@ -476,13 +493,13 @@ img {
       }
 
       &::after {
-        content: ' +';
+        content: " +";
       }
     }
   }
 
   &[open] summary::after {
-    content: ' \2212';
+    content: " \2212";
   }
 
   // Always open on desktop
@@ -515,7 +532,7 @@ img {
     }
 
     &::before {
-      content: '\2013';
+      content: "\2013";
       position: absolute;
       left: 0;
       color: $border-hover;
@@ -658,7 +675,8 @@ img {
     opacity: 1;
   }
 
-  img, video {
+  img,
+  video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -741,7 +759,9 @@ img {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
 
   &.is-active {
     opacity: 1;
@@ -757,7 +777,8 @@ img {
   align-items: center;
   justify-content: center;
 
-  img, video {
+  img,
+  video {
     max-width: 90vw;
     max-height: 85vh;
     border-radius: 6px;
@@ -882,7 +903,7 @@ img {
 /***********/
 
 .contact-content {
-  max-width: 520px;
+  max-width: 100%;
 
   > p {
     font-size: 15px;
@@ -894,20 +915,25 @@ img {
 
 .contact-links {
   display: flex;
-  flex-direction: column;
+  align-items: stretch;
   gap: 8px;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .copy-btn {
   background: none;
   border: none;
-  color: $text-muted;
-  font-size: 12px;
+  color: $accent;
+  font-size: 14px;
   font-family: $font-mono;
-  padding: 4px 8px;
+  padding: 0;
   cursor: pointer;
   transition: color 0.15s ease;
-  margin-left: auto;
+  margin: 0;
+  line-height: inherit;
   flex-shrink: 0;
 
   &:hover {
@@ -921,8 +947,10 @@ img {
 
 .contact-item {
   display: flex;
-  align-items: center;
-  padding: 14px 16px;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  padding: 14px;
   background: $bg-card;
   border: 1px solid $border;
   border-radius: 8px;
@@ -933,12 +961,7 @@ img {
   }
 
   a {
-    display: flex;
-    align-items: center;
-    gap: 16px;
     color: $text;
-    flex: 1;
-    min-width: 0;
 
     &:hover {
       color: $text;
@@ -965,15 +988,23 @@ img {
 
 .contact-label {
   font-family: $font-mono;
-  font-size: 12px;
+  font-size: 11px;
   color: $accent;
   font-weight: 500;
-  min-width: 60px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .contact-value {
   font-size: 14px;
   color: $text-muted;
+  white-space: nowrap;
 }
 
 /**********/

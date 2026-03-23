@@ -30,12 +30,12 @@
     - LLM
     - WebAssembly
 
-- name: DCS World (Eagle Dynamics)
+- name: DCS World
   folder: dcs
   url: https://www.digitalcombatsimulator.com/en/
   role: 3D Graphics Developer
   description: >
-    At DCS I worked as a rendering engineer responsible for porting the game engine from DirectX11
+    At Eagle Dynamics I worked as a rendering engineer responsible for porting the game engine from DirectX11
     to Vulkan API. I implemented the new rendering backend with render graph architecture on top,
     optimized engine performance and set up a pipeline for cross-compiling FX shaders to SPIR-V.
   youtube:
