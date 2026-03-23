@@ -13,3 +13,9 @@ mxengine:
     type: image
   - file: vid1.mp4
     type: video
+
+thebricks:
+  - file: img1.png
+    type: image
+  - file: img2.png
+    type: image

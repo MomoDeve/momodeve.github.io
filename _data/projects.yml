@@ -15,8 +15,15 @@
   url: https://www.thebricks.com/
   role: AI / Frontend Developer
   description: >
-    AI-first spreadsheet and BI web application with a custom rendering engine,
-    interactive charts, and AI-generated auto-refreshable dashboards.
+    Bricks is the project I've been working on for the last 4 years. It started
+    as a lightweight fast multi-user web spreadsheet, but soon became an AI-powered
+    tool for generating dashboards. I designed LLM pipelines that clean up, organize
+    and analyze user data, build a plan for the AI agents and generate beautiful dashboards
+    with interactive insights, charts, and tables. Everything can be controlled and
+    tuned by simply prompting AI, and all data is automatically updated from connected sources.
+  youtube:
+    - url: https://youtu.be/bIUfB1MK-jQ
+      caption: Product demo
   tags:
     - TypeScript
     - SolidJS
@@ -28,10 +35,9 @@
   url: https://www.digitalcombatsimulator.com/en/
   role: 3D Graphics Developer
   description: >
-    Rendering engineer on a flight simulator engine — ported the renderer
-    from DirectX 11 to Vulkan with a render graph architecture, enabling
-    modern graphics features. Built a pipeline for cross-compiling FX shaders to SPIR-V,
-    optimized shader performance.
+    At DCS I worked as a rendering engineer responsible for porting the game engine from DirectX11
+    to Vulkan API. I implemented the new rendering backend with render graph architecture on top,
+    optimized engine performance and set up a pipeline for cross-compiling FX shaders to SPIR-V.
   youtube:
     - url: https://youtu.be/LikrhlACyiI
       caption: Game trailer
@@ -46,9 +52,10 @@
   role: Author
   stars: "1.2K+"
   description: >
-    A personal 3D game engine built from scratch in C++ and modern OpenGL —
-    dynamic lighting and shadows, PBR pipeline, ECS architecture, physics,
-    audio, asset management, and runtime scene editing with hot code reload.
+    MxEngine is one of the biggest open-source projects I did in my free time. It's a 3D
+    game engine with all the core features: dynamic lighting and shadows, PBR
+    rendering pipeline, asset manager, runtime scene editing and script compilation,
+    Entity Component System, physics and sounds — written fully in C++ with modern OpenGL.
   tags:
     - C++
     - OpenGL
