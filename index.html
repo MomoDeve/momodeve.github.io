@@ -224,20 +224,38 @@ layout: default
         </div>
 
         {% assign media = site.data.project_media[project.folder] %}
-        {% if media.size > 0 %}
+        {% assign yt = project.youtube %}
+        {% assign has_media = false %}
+        {% if media.size > 0 %}{% assign has_media = true %}{% endif %}
+        {% if yt.size > 0 %}{% assign has_media = true %}{% endif %}
+        {% if has_media %}
         <div class="project-gallery">
+          {% assign idx = 0 %}
           {% for item in media %}
-          <button class="gallery-thumb" data-lightbox data-index="{{ forloop.index0 }}" data-project="{{ project.folder }}">
+          <button class="gallery-thumb" data-lightbox data-index="{{ idx }}" data-project="{{ project.folder }}">
             {% if item.type == "video" %}
             <video src="{{ site.baseurl }}/assets/projects/{{ project.folder }}/{{ item.file }}" muted loop playsinline preload="metadata"></video>
             <span class="gallery-play-badge">&#9654;</span>
             {% else %}
-            <img src="{{ site.baseurl }}/assets/projects/{{ project.folder }}/{{ item.file }}" alt="{{ item.caption }}" loading="lazy" />
-            {% endif %}
-            {% if item.caption %}
-            <span class="gallery-caption">{{ item.caption }}</span>
+            <img src="{{ site.baseurl }}/assets/projects/{{ project.folder }}/{{ item.file }}" loading="lazy" />
             {% endif %}
           </button>
+          {% assign idx = idx | plus: 1 %}
+          {% endfor %}
+          {% for yt_item in yt %}
+          {% if yt_item.url contains "youtu.be" %}
+            {% assign yt_id = yt_item.url | split: "youtu.be/" | last | split: "?" | first %}
+          {% else %}
+            {% assign yt_id = yt_item.url | split: "v=" | last | split: "&" | first %}
+          {% endif %}
+          <button class="gallery-thumb gallery-thumb--yt" data-lightbox data-index="{{ idx }}" data-project="{{ project.folder }}" data-youtube="{{ yt_id }}">
+            <img src="https://img.youtube.com/vi/{{ yt_id }}/hqdefault.jpg" alt="{{ yt_item.caption }}" loading="lazy" />
+            <span class="gallery-play-badge">&#9654;</span>
+            {% if yt_item.caption %}
+            <span class="gallery-caption">{{ yt_item.caption }}</span>
+            {% endif %}
+          </button>
+          {% assign idx = idx | plus: 1 %}
           {% endfor %}
         </div>
         {% endif %}

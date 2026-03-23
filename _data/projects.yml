@@ -1,8 +1,13 @@
 # ──────────────────────────────────────────────────────────────
 # Project Showcase Data
 # ──────────────────────────────────────────────────────────────
-# Media is auto-detected from  assets/projects/<folder>/
-# Just drop images/videos there — the plugin handles the rest.
+# Local media is auto-detected from  assets/projects/<folder>/
+# Just drop images/videos there and run sync-media.sh.
+#
+# YouTube videos go here manually:
+#   youtube:
+#     - url: https://www.youtube.com/watch?v=VIDEO_ID
+#       caption: Demo reel
 # ──────────────────────────────────────────────────────────────
 
 - name: The Bricks
@@ -23,8 +28,13 @@
   url: https://www.digitalcombatsimulator.com/en/
   role: 3D Graphics Developer
   description: >
-    Vulkan rendering backend for a flight simulator — replaced DirectX 11,
-    automated shader migration to SPIR-V, and optimized GPU memory usage.
+    Rendering engineer on a flight simulator engine — ported the renderer
+    from DirectX 11 to Vulkan with a render graph architecture, enabling
+    modern graphics features. Built a pipeline for cross-compiling FX shaders to SPIR-V,
+    optimized shader performance.
+  youtube:
+    - url: https://youtu.be/LikrhlACyiI
+      caption: Game trailer
   tags:
     - C++
     - Vulkan
@@ -36,10 +46,12 @@
   role: Author
   stars: "1.2K+"
   description: >
-    3D game engine with deferred rendering, PBR, physics,
-    and runtime code reload.
+    A personal 3D game engine built from scratch in C++ and modern OpenGL —
+    dynamic lighting and shadows, PBR pipeline, ECS architecture, physics,
+    audio, asset management, and runtime scene editing with hot code reload.
   tags:
     - C++
     - OpenGL
-    - Physics
+    - GLSL
     - PBR
+    - ECS
