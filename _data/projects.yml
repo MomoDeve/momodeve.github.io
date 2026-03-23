@@ -1,0 +1,45 @@
+# ──────────────────────────────────────────────────────────────
+# Project Showcase Data
+# ──────────────────────────────────────────────────────────────
+# Media is auto-detected from  assets/projects/<folder>/
+# Just drop images/videos there — the plugin handles the rest.
+# ──────────────────────────────────────────────────────────────
+
+- name: The Bricks
+  folder: thebricks
+  url: https://www.thebricks.com/
+  role: AI / Frontend Developer
+  description: >
+    AI-first spreadsheet and BI web application with a custom rendering engine,
+    interactive charts, and AI-generated auto-refreshable dashboards.
+  tags:
+    - TypeScript
+    - SolidJS
+    - LLM
+    - WebAssembly
+
+- name: DCS World (Eagle Dynamics)
+  folder: dcs
+  url: https://www.digitalcombatsimulator.com/en/
+  role: 3D Graphics Developer
+  description: >
+    Vulkan rendering backend for a flight simulator — replaced DirectX 11,
+    automated shader migration to SPIR-V, and optimized GPU memory usage.
+  tags:
+    - C++
+    - Vulkan
+    - SPIR-V
+
+- name: MxEngine
+  folder: mxengine
+  url: https://github.com/asc-community/MxEngine
+  role: Author
+  stars: "1.2K+"
+  description: >
+    3D game engine with deferred rendering, PBR, physics,
+    and runtime code reload.
+  tags:
+    - C++
+    - OpenGL
+    - Physics
+    - PBR

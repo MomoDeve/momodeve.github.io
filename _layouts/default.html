@@ -28,6 +28,14 @@
       {{ content }}
     </main>
 
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+      <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+      <div class="lightbox-content" id="lightbox-content"></div>
+    </div>
+
     <footer class="site-footer">
       <div class="container">
         <div class="footer-inner">
@@ -46,6 +54,88 @@
           d.removeAttribute('open');
         });
       }
+      // ── Lightbox ──
+      (function() {
+        var overlay = document.getElementById('lightbox');
+        var content = document.getElementById('lightbox-content');
+        var items = [];   // { src, type, caption }
+        var current = 0;
+
+        function collectItems(card) {
+          items = [];
+          card.querySelectorAll('.gallery-thumb').forEach(function(thumb) {
+            var vid = thumb.querySelector('video');
+            var img = thumb.querySelector('img');
+            var cap = thumb.querySelector('.gallery-caption');
+            if (vid) {
+              items.push({ src: vid.src, type: 'video', caption: cap ? cap.textContent : '' });
+            } else if (img) {
+              items.push({ src: img.src, type: 'image', caption: cap ? cap.textContent : '' });
+            }
+          });
+        }
+
+        function show(index) {
+          current = index;
+          var item = items[current];
+          var html = '';
+          if (item.type === 'video') {
+            html = '<video src="' + item.src + '" controls autoplay loop style="max-width:90vw;max-height:85vh;border-radius:6px"></video>';
+          } else {
+            html = '<img src="' + item.src + '" alt="' + item.caption + '" />';
+          }
+          if (item.caption) {
+            html += '<div class="lightbox-caption">' + item.caption + '</div>';
+          }
+          content.innerHTML = html;
+          overlay.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+          overlay.classList.remove('is-active');
+          document.body.style.overflow = '';
+          var v = content.querySelector('video');
+          if (v) v.pause();
+          content.innerHTML = '';
+        }
+
+        document.querySelectorAll('.gallery-thumb').forEach(function(thumb) {
+          // Hover‑play for video thumbnails
+          var vid = thumb.querySelector('video');
+          if (vid) {
+            thumb.addEventListener('mouseenter', function() { vid.play(); });
+            thumb.addEventListener('mouseleave', function() { vid.pause(); vid.currentTime = 0; });
+          }
+
+          thumb.addEventListener('click', function() {
+            var card = thumb.closest('.project-card');
+            collectItems(card);
+            var idx = parseInt(thumb.getAttribute('data-index'), 10);
+            show(idx);
+          });
+        });
+
+        overlay.querySelector('.lightbox-close').addEventListener('click', close);
+        overlay.querySelector('.lightbox-prev').addEventListener('click', function() {
+          if (items.length > 1) show((current - 1 + items.length) % items.length);
+        });
+        overlay.querySelector('.lightbox-next').addEventListener('click', function() {
+          if (items.length > 1) show((current + 1) % items.length);
+        });
+
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) close();
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (!overlay.classList.contains('is-active')) return;
+          if (e.key === 'Escape') close();
+          if (e.key === 'ArrowLeft') overlay.querySelector('.lightbox-prev').click();
+          if (e.key === 'ArrowRight') overlay.querySelector('.lightbox-next').click();
+        });
+      })();
+
       document.querySelectorAll('.copy-btn').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
           e.preventDefault();

@@ -18,13 +18,20 @@ layout: default
           I am a software engineer specializing in
           <strong>AI-powered products</strong> and
           <strong>3D graphics</strong>, both natively and on the web.
-          <br /><br />
+        </p>
+        <p class="hero-summary">
           I enjoy working across the full stack of complex,
           performance-sensitive applications &mdash; from building
           <strong>low-level rendering systems</strong> for game engines and
           flight simulators to designing <strong>LLM-driven products</strong>
           for thousands of users.
         </p>
+
+        <ul class="career-brief">
+          <li>2022 &ndash; now &middot; The Bricks &middot; AI / Frontend<span class="career-location"> &middot; Toronto, Canada</span></li>
+          <li>2021 &ndash; 2022 &middot; Eagle Dynamics &middot; 3D Graphics<span class="career-location"> &middot; Moscow, Russia</span></li>
+          <li>2020 &ndash; 2021 &middot; Nanosemantics &middot; C++ / Python<span class="career-location"> &middot; Moscow, Russia</span></li>
+        </ul>
 
         <div class="hero-actions">
           <a href="mailto:alexander.potapov.w@gmail.com" class="btn btn-primary"
@@ -200,53 +207,48 @@ layout: default
 <!-- Projects -->
 <section class="section" id="projects">
   <div class="container">
-    <h2 class="section-heading">Open Source</h2>
+    <h2 class="section-heading">Projects</h2>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <h3><a href="https://github.com/asc-community/MxEngine" target="_blank" rel="noopener">MxEngine</a> <span class="project-role">&middot; Author</span></h3>
-            </div>
-            <span class="timeline-date">1.2K+ stars</span>
+    <div class="project-showcase">
+      {% for project in site.data.projects %}
+      <div class="project-card">
+        <div class="project-card-header">
+          <div>
+            <h3>
+              <a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>
+              <span class="project-role">&middot; {{ project.role }}</span>
+            </h3>
+            <p class="project-description">{{ project.description }}</p>
           </div>
-          <ul class="timeline-details">
-            <li>3D game engine with deferred rendering, PBR, physics, and runtime code reload.</li>
-          </ul>
+          {% if project.stars %}<span class="project-stars">{{ project.stars }} stars</span>{% endif %}
+        </div>
+
+        {% assign media = site.data.project_media[project.folder] %}
+        {% if media.size > 0 %}
+        <div class="project-gallery">
+          {% for item in media %}
+          <button class="gallery-thumb" data-lightbox data-index="{{ forloop.index0 }}" data-project="{{ project.folder }}">
+            {% if item.type == "video" %}
+            <video src="{{ site.baseurl }}/assets/projects/{{ project.folder }}/{{ item.file }}" muted loop playsinline preload="metadata"></video>
+            <span class="gallery-play-badge">&#9654;</span>
+            {% else %}
+            <img src="{{ site.baseurl }}/assets/projects/{{ project.folder }}/{{ item.file }}" alt="{{ item.caption }}" loading="lazy" />
+            {% endif %}
+            {% if item.caption %}
+            <span class="gallery-caption">{{ item.caption }}</span>
+            {% endif %}
+          </button>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="project-tags">
+          {% for tag in project.tags %}
+          <span class="project-tag">{{ tag }}</span>
+          {% endfor %}
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <h3><a href="https://github.com/prographon/graphics-developer-roadmap" target="_blank" rel="noopener">Graphics Developer Roadmap</a> <span class="project-role">&middot; Maintainer</span></h3>
-            </div>
-            <span class="timeline-date">1.2K+ stars</span>
-          </div>
-          <ul class="timeline-details">
-            <li>Curated graphics programming resources and learning path.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <h3><a href="https://github.com/asc-community/AngouriMath" target="_blank" rel="noopener">AngouriMath</a> <span class="project-role">&middot; Co-author</span></h3>
-            </div>
-            <span class="timeline-date">800+ stars</span>
-          </div>
-          <ul class="timeline-details">
-            <li>C# symbolic math library for evaluation, simplification, and analytic solving.</li>
-          </ul>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
