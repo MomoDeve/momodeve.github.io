@@ -211,12 +211,13 @@ layout: default
 
     <div class="project-showcase">
       {% for project in site.data.projects %}
-      <div class="project-card">
+      <div class="project-card{% if project.wip %} project-card--wip{% endif %}">
         <div class="project-card-header">
           <div>
             <h3>
               <a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>
               <span class="project-role">&middot; {{ project.role }}</span>
+              {% if project.wip %}<span class="project-wip-badge">WIP</span>{% endif %}
             </h3>
             <p class="project-description">{{ project.description }}</p>
           </div>

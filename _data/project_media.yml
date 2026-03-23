@@ -19,3 +19,11 @@ thebricks:
     type: image
   - file: img2.png
     type: image
+
+voxellaneous:
+  - file: img1.png
+    type: image
+  - file: img2.png
+    type: image
+  - file: vid2.mp4
+    type: video

@@ -545,9 +545,27 @@ img {
     border-color: $border-hover;
   }
 
+  &--wip {
+    border-style: dashed;
+    opacity: 0.8;
+  }
+
   @include mobile {
     padding: 16px;
   }
+}
+
+.project-wip-badge {
+  font-family: $font-mono;
+  font-size: 10px;
+  font-weight: 600;
+  color: $accent;
+  background: $accent-dim;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-left: 8px;
+  vertical-align: middle;
+  letter-spacing: 0.05em;
 }
 
 .project-card-header {
