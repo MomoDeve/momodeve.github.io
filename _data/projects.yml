@@ -63,13 +63,27 @@
     - PBR
     - ECS
 
+- name: OpenClaw Workflow
+  folder: openclaw
+  url: https://www.thebricks.com/
+  role: Developer
+  description: >
+    During my time at Bricks I was also working on the OpenClaw workflow system. OpenClaw is an AI orchestration engine
+    which was deployed internally for our company and connected to Linear and Slack.
+    Our OpenClaw agent autonomously picks up tasks from Linear, plans them based on accumulated product and codebase knowledge,
+    executes, tests and deploys the code changes on a separate branch, which is then reviewed by engineers.
+    This system let us automate internal processes and save a lot of time on repetitive tasks.
+  tags:
+    - OpenClaw
+    - TypeScript
+
 - name: Voxellaneous
   folder: voxellaneous
   url: https://github.com/voxellaneous/voxellaneous
   role: Author
   wip: true
   description: >
-    Voxellaneous is a side project I am currently working on — a voxel engine written fully in TypeScript with WebGPU. 
+    Voxellaneous is a side project I am currently working on — a voxel engine written fully in TypeScript with WebGPU.
     The goal is to create a highly modular and extensible engine running fully in the browser, with ability to connect
     with other players and share voxel worlds. I am also treating this project as a playground for LLM experiments -
     the code is generated fully by Claude Code, and engine modding API will be designed around prompting AI to generate new features and content.

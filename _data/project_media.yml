@@ -14,6 +14,14 @@ mxengine:
   - file: vid1.mp4
     type: video
 
+openclaw:
+  - file: img1.png
+    type: image
+  - file: img2.png
+    type: image
+  - file: img3.png
+    type: image
+
 thebricks:
   - file: img1.png
     type: image
