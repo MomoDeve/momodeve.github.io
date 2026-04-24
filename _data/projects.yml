@@ -13,22 +13,25 @@
 - name: The Bricks
   folder: thebricks
   url: https://www.thebricks.com/
-  role: AI / Frontend Developer
+  role: AI Product / Frontend Developer
   description: >
     Bricks is the project I've been working on for the last 4 years. It started
     as a lightweight fast multi-user web spreadsheet, but soon became an AI-powered
-    tool for generating dashboards. I designed LLM pipelines that clean up, organize
-    and analyze user data, build a plan for the AI agents and generate beautiful dashboards
-    with interactive insights, charts, and tables. Everything can be controlled and
-    tuned by simply prompting AI, and all data is automatically updated from connected sources.
+    tool for generating dashboards. I designed LLM workflows and supporting backend
+    APIs that clean up, organize and analyze user data, plan AI-generated outputs,
+    and produce live dashboards with interactive insights, charts, and tables.
+    Everything can be controlled and tuned by prompting AI, and all data is
+    automatically updated from connected sources.
   youtube:
     - url: https://youtu.be/bIUfB1MK-jQ
       caption: Product demo
   tags:
     - TypeScript
+    - React
     - SolidJS
     - LLM
-    - WebAssembly
+    - Node.js
+    - AWS CDK
 
 - name: DCS World
   folder: dcs
@@ -62,6 +65,22 @@
     - GLSL
     - PBR
     - ECS
+
+- name: Graphics Developer Roadmap
+  folder: graphics-roadmap
+  url: https://github.com/prographon/graphics-developer-roadmap
+  role: Maintainer
+  stars: "1.2K+"
+  description: >
+    Graphics Developer Roadmap is a curated set of graphics programming resources
+    for engineers learning rendering, GPU programming, math, shaders, and engine
+    architecture. I maintain the roadmap to help developers navigate the field
+    without getting lost in scattered references.
+  tags:
+    - Graphics
+    - Roadmap
+    - Learning
+    - Open Source
 
 - name: OpenClaw Workflow
   folder: openclaw
