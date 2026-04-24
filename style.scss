@@ -916,7 +916,6 @@ img {
 .contact-links {
   display: flex;
   align-items: stretch;
-  flex-wrap: wrap;
   gap: 8px;
 
   @include mobile {
@@ -950,7 +949,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  flex: 1 1 210px;
+  flex: 1;
   padding: 14px;
   background: $bg-card;
   border: 1px solid $border;

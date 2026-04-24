@@ -66,22 +66,6 @@
     - PBR
     - ECS
 
-- name: Graphics Developer Roadmap
-  folder: graphics-roadmap
-  url: https://github.com/prographon/graphics-developer-roadmap
-  role: Maintainer
-  stars: "1.2K+"
-  description: >
-    Graphics Developer Roadmap is a curated set of graphics programming resources
-    for engineers learning rendering, GPU programming, math, shaders, and engine
-    architecture. I maintain the roadmap to help developers navigate the field
-    without getting lost in scattered references.
-  tags:
-    - Graphics
-    - Roadmap
-    - Learning
-    - Open Source
-
 - name: OpenClaw Workflow
   folder: openclaw
   url: https://www.thebricks.com/
